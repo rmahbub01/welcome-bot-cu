@@ -16,12 +16,7 @@ def main():
     updater = Updater('1407868038:AAEcSMKEB8Zli2pBMUxl0NFhne_BynE4FAQ')
     dp = updater.dispatcher
     dp.add_handler(MessageHandler(Filters.status_update.new_chat_members,welcome))
-
-    updater.start_webhook(listen='0.0.0.0',
-    port=80,
-    url_path='1407868038:AAEcSMKEB8Zli2pBMUxl0NFhne_BynE4FAQ',
-    webhook_url=' https://welcome-bot-cu.herokuapp.com/' + '1407868038:AAEcSMKEB8Zli2pBMUxl0NFhne_BynE4FAQ'
-    )
+    updater.start_polling()
     updater.idle()
 
 if __name__=='__main__':
